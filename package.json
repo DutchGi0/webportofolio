@@ -1,0 +1,26 @@
+{
+  "name": "gvreeling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html -d public --public-url ./"
+  },
+  "keywords": [
+    "Web Portfolio",
+    "Web Developer",
+    "Full-Stack Developer"
+  ],
+  "author": "Giovanni Vreeling",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "rimraf": "^5.0.0",
+    "sass": "^1.62.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.3.0-alpha3"
+  }
+}

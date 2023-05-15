@@ -1,0 +1,204 @@
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.purple {
+	color: $purple;
+}
+
+.section-title {
+	margin-bottom: 1.5rem;
+	color: $section;
+	font-size: 1rem;
+}
+
+/* text */
+.text-primary {
+	color: $text;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+body {
+  background-color: $main;
+	color: $text;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	font-size: 1.125rem;
+	
+	.navbar {
+		transition: top 0.3s;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+		@media (max-width: 993px) {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+		}
+
+		.navbar-brand{
+			position: relative;
+			left: 30px;
+
+			&::before{
+				content: '<';
+				position: absolute;
+				left: -25px;
+				top: -5px;
+				color: $purple;
+				font-size: 2.25rem;
+			}
+
+			&::after{
+				content: '/>';
+				position: absolute;
+				right: -40px;
+				top: -5px;
+				color: $purple;
+				font-size: 2.25rem;
+			}
+		}
+		.nav-item{
+			@media (max-width: 993px) {
+				display: flex;
+				justify-content: center;
+
+			}
+		}
+		span:not(.navbar-toggler-icon) {
+			@media (max-width: 993px) {
+				display: none;
+			}
+		}
+	}
+	.navbar-hidden {
+		top: -100px;
+	}
+
+	/* ----------About---------- */
+
+	#about{
+		.code-wrp{
+			font-size: 1.125rem;
+			line-height: 1.6;
+			width: 80vw;
+			background-color: rgba($color: black, $alpha: 0.1);
+			.code-1 {
+				position: relative;
+				z-index: 1;
+				.methods,
+				.constructor{
+					display: inline;
+					color: $purple;
+				}
+				.constructor {
+					margin-left: .5rem;
+				}
+				.propname{
+					display: inline;
+					color: $className;
+					margin-left: .5rem;
+				}
+				.scope{
+					display: inline;
+					color: $red;
+					margin-left: 1rem;
+				}
+				.prop {
+					display: inline;
+					color: $prop;
+				}
+				.dot {
+					display: inline;
+					opacity: 0;
+				}
+				.spacing-1 {
+					margin-left: 1rem;
+				}
+				.spacing-05 {
+					margin-left: .5rem;
+				}
+				.start{
+					display: inline;
+					margin-right: .5rem;
+				}
+				.end{
+					display: inline;
+					margin-left: .5rem;
+				}
+				.operator{
+					display: inline;
+					margin-inline: .5rem;
+				}
+				&::after {
+					color: #3b3553;
+					content: attr(data-line-nr);
+					font-family: 'Roboto Mono', monospace !important;
+					font-size: 16px;
+					left: -60px;
+					position: absolute;
+					top: 0;
+					z-index: 3;
+					@media screen and (max-width: 768px) {
+						left: -15px;
+					}
+				}
+				@media (min-width: 768px) {
+					&:hover {
+					background-color: #3b3553;
+					opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* --------Animations------- */
+
+/*------glich animation------*/
+
+@media (min-width: 769px) {
+	#skillsList { 
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	#skillsText {
+		display: none;
+	}
+
+	#skillsList {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-top: -1.5rem;
+		padding: 0;
+		li {
+			margin: 0 4px;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
