@@ -6,6 +6,8 @@
     <title>Gvreeling Portfolio</title>
     <link rel="stylesheet" href="scss/styles.scss">
     <script type="module" src="js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top mb-3" style="background: rgba(33, 37, 41, .85) !important;">
@@ -22,10 +24,10 @@
                 <a class="nav-link fw-bold active" href="#start">Start <span class="text-secondary"> /></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#about">About <span> /></span></a>
+                    <a class="nav-link" href="#projects">Projects <span> /></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects <span> /></span></a>
+                <a class="nav-link" href="#about">About <span> /></span></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact <span> /></span></a>
@@ -54,6 +56,18 @@
                             <li>MySQL.</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="row">
+            <div class="mt-2 d-flex">
+                <div class="projects mt-2 ms-3">
+                    <div class="timeline"></div>
+                    <small class="section-title">Projects /></small>
                 </div>
             </div>
         </div>
@@ -157,6 +171,87 @@
             </div>
         </div>
     </section>
+
+    <!-- Projects -->
+    <section id="contact">
+        <div class="row mb-5">
+            <div class="mt-2">
+                <div class="projects mt-2 ms-3">
+                    <div class="timeline"></div>
+                    <small class="section-title">Contact /></small>
+                    <p class="mt-5">Find me on:</p>
+
+                    <div class="social-wrp mb-3">
+                        <div class="social-item">
+                            <a href="https://github.com/DutchGi0" class="link-purple" target="_blank">
+                                <img src="images/github-mark-white.svg" alt="GitHub">
+                                <span>github.com/DutchGi0</span>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://codepen.io/dutchgi0-the-coder" class="link-purple" target="_blank">
+                                <img src="images/codepen-icon.svg" alt="CodePen">
+                                <span>codepen.io/dutchgi0-the-coder</span>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.linkedin.com/in/giovanni-vreeling/" class="link-purple" target="_blank">
+                                <img src="images/linkedin.svg" alt="LinkedIn">
+                                <span>in/giovanni-vreeling</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="modal" tabindex="-1" id="contactModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Contact Me</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="contact-form" method="post" action="contact.php">
+                                        <div class="mb-3">
+                                            <label for="contactName" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="contactName" name="user_name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contactEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="contactEmail" name="user_email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contactSubject" class="form-label">Subject</label>
+                                            <input type="text" class="form-control" id="contactSubject" name="subject" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contactMessage" class="form-label">Message</label>
+                                            <textarea class="form-control" id="contactMessage" name="message" rows="3" required></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" id="send-btn" class="btn btn-primary" name="send-mail">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Contact Me
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!--    copyright-->
+    <div class="row">
+        <div class="col-12 text-center">
+            <p class="copyright">© 2023 Giovanni Vreeling</p>
+        </div>
+    </div>
 </div>
 </body>
 </html>

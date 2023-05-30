@@ -13,6 +13,15 @@
 	color: $purple;
 }
 
+.link-purple {
+	color: $purple;
+	text-decoration: none;
+	&:hover {
+		color: $purple;
+		text-decoration: none;
+	}
+}
+
 .section-title {
 	margin-bottom: 1.5rem;
 	color: $section;
@@ -94,7 +103,7 @@ body {
 		.code-wrp{
 			font-size: 1.125rem;
 			line-height: 1.6;
-			width: 80vw;
+			width: 100%;
 			background-color: rgba($color: black, $alpha: 0.1);
 			.code-1 {
 				position: relative;
@@ -144,7 +153,7 @@ body {
 					margin-inline: .5rem;
 				}
 				&::after {
-					color: #3b3553;
+					color: rgba($color: $section, $alpha: 0.5);
 					content: attr(data-line-nr);
 					font-family: 'Roboto Mono', monospace !important;
 					font-size: 16px;
@@ -162,12 +171,56 @@ body {
 					opacity: 0.5;
 					}
 				}
+				@media (max-width: 768px) {
+					&::after{
+						left: -25px;
+						color: $section;
+					}
+				}
 			}
 		}
 	}
 }
 
+/* -------Contact-----------*/
 
+.social-wrp {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .5rem;
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.social-item {
+	display: flex;
+	align-items: center;
+	img {
+		display: block;
+		width: 24px;
+		height: 24px;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		gap: .5rem;
+	}
+}
+
+.modal-content {
+	background-color: $main;
+	.btn-close {
+		color: $text;
+	}
+}
+
+.copyright {
+	background-color: $main;
+	color: rgba($color: $text, $alpha: 0.2);
+	padding: 1rem 0;
+	text-align: center;
+}
 
 /* --------Animations------- */
 
