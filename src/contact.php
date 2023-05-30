@@ -1,25 +1,21 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+use PHPMailer/PHPMailer/PHPMailer;
+use PHPMailer/PHPMailer/Exception;
 
 require_once 'vendor/autoload.php';
-require 'C:\xampp\htdocs\ondertiteling\vendor\phpmailer\phpmailer\src\Exception.php';
-require 'C:\xampp\htdocs\ondertiteling\vendor\phpmailer\phpmailer\src\PHPMailer.php';
-require 'C:\xampp\htdocs\ondertiteling\vendor\phpmailer\phpmailer\src\SMTP.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 session_start();
 
-// Generate CSRF token
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verify CSRF token
-    if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die("CSRF validation failed.");
-    }
+
 
     // Retrieve form data
     $name = $_POST['user_name'];
@@ -42,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Sender and recipient settings
         $mail->setFrom($email, $name);
-        $mail->addAddress('recipient@example.com', 'Recipient Name');
+        $mail->addAddress($email, $name);
 
         // Email content
         $mail->isHTML(true);

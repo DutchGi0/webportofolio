@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.php",
-    "build": "parcel build src/index.php -d public --public-url ./"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html -d public --public-url ./"
   },
   "keywords": [
     "Web Portfolio",
