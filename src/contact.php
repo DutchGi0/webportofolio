@@ -27,14 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP configuration
-        $mail->isSMTP();
-        $mail->Host = 'smtp.strato.com';
-        $mail->Port = 465;
-        $mail->SMTPAuth = true;
-        $mail->Username = 'giovanni@gvreeling.nl';
-        $mail->Password = 'v6*p7R1v^3%JUh@7WSzV';
-        $mail->SMTPSecure = 'ssl';
+        
 
         // Sender and recipient settings
         $mail->setFrom($email, $name);
